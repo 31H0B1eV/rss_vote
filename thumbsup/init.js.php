@@ -8,7 +8,7 @@
  */
 
 // Send the correct HTTP Content-Type header
-header('Content-Type: application/javascript; charset=utf-8');
+header('Content-Type: text/javascript; charset=utf-8');
 
 // This file is always called directly, and not included by another PHP page.
 // So the include path is relative to this file.

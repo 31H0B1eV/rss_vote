@@ -11,11 +11,11 @@
 define('THUMBSUP_DOCROOT', realpath(dirname(__FILE__)).'/');
 
 // Load the required ThumbsUp classes
-require 'classes/thumbsup.php';
-require 'classes/thumbsup_cookie.php';
-require 'classes/thumbsup_item.php';
-require 'classes/thumbsup_items.php';
-require 'classes/thumbsup_template.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_cookie.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_item.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_items.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_template.php';
 
 // Debug mode is enabled
 if (ThumbsUp::config('debug'))

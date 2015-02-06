@@ -15,11 +15,11 @@ define('THUMBSUP_DOCROOT', substr(realpath(dirname(__FILE__)), 0, -5));
 date_default_timezone_set('UTC');
 
 // Load the required ThumbsUp classes
-require THUMBSUP_DOCROOT.'classes/thumbsup.php';
-require THUMBSUP_DOCROOT.'classes/thumbsup_cookie.php';
-require THUMBSUP_DOCROOT.'classes/thumbsup_admin.php';
-require THUMBSUP_DOCROOT.'classes/thumbsup_item.php';
-require THUMBSUP_DOCROOT.'classes/thumbsup_template.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_cookie.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_admin.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_item.php';
+require THUMBSUP_DOCROOT . 'classes/thumbsup_template.php';
 
 // Debug mode is enabled
 if (ThumbsUp::config('debug'))

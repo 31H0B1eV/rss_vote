@@ -26,7 +26,7 @@ class ThumbsUp {
 		// Load the config.php file only once
 		if ($config === NULL)
 		{
-			$config = include THUMBSUP_DOCROOT.'config.php';
+			$config = include THUMBSUP_DOCROOT . 'config.php';
 
 			// The url setting must end with a slash
 			$config['url'] = rtrim($config['url'], '/').'/';
@@ -89,7 +89,7 @@ class ThumbsUp {
 
 		if ( ! class_exists('Services_JSON', FALSE))
 		{
-			require THUMBSUP_DOCROOT.'classes/services_json.php';
+			require THUMBSUP_DOCROOT . 'classes/services_json.php';
 		}
 
 		if ( ! function_exists('json_encode'))

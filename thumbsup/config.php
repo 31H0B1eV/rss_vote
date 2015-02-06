@@ -16,7 +16,7 @@ return array(
 	 * Note: you should either use "www" in your URL or not to prevent problems.
 	 * Also see: http://dense13.com/blog/2008/02/27/redirecting-non-www-to-www-with-htaccess/
 	 */
-	'url' => 'thumbsup',
+	'url' => 'http://vote.dev/thumbsup/',
 
 	/**
 	 * (string) The Data Source Name, or DSN, contains the information required
