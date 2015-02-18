@@ -39,6 +39,9 @@
                             <div class="row">
                                 <div class="bootcards-chart-canvas">
                                     <?php echo '<p>' . $item->description . '</p>';?>
+                                </div>
+
+                                <div>
                                     <?php echo ThumbsUp::item($item->guid)->template('thumbs_up_down')->options('align=right');?>
                                 </div>
                             </div>
