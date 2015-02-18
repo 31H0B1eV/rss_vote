@@ -27,26 +27,27 @@
             <div class="panel panel-default bootcards-chart">
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                         <?php
-                        $result = sortData($data);
+                        $result = selectData();
+
                         foreach($result as $item){
                         ?>
                     <div class="panel panel-default bootcards-summary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><?php echo $item->title;?></h3>
+                            <h3 class="panel-title"><?php echo $item['title'];?></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="bootcards-chart-canvas">
-                                    <?php echo '<p>' . $item->description . '</p>';?>
+                                    <?php echo '<p>' . $item['description'] . '</p>';?>
                                 </div>
 
                                 <div class="btn-vote">
-                                    <?php echo ThumbsUp::item($item->guid)->template('thumbs_up_down')->options('align=right');?>
+                                    <?php echo ThumbsUp::item($item['link'])->template('thumbs_up_down')->options('align=right');?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel-footer">
-                            <small class="pull-right"><?php echo $item->pubDate;?></small>
+                            <small class="pull-right"><?php echo $item['pubDate'];?></small>
                         </div>
                     </div>
                         <?php } ?>

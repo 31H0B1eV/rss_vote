@@ -32,6 +32,15 @@ function insertLastData($data)
     }
 }
 
+function selectData()
+{
+    $DB = new DBPDO();
+
+    $data = $DB->fetchAll("SELECT * FROM articles");
+
+    return $data;
+}
+
 /**
  * Get data from rss feed, see example of using in index.php (line 24)
  * if you need add more feed, just add new value into array or arguments

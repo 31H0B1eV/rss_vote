@@ -21,7 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `articles`;
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `link` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL UNIQUE,
   `title` varchar(255) DEFAULT NULL,
   `description` text,
   `pubDate` datetime DEFAULT NULL,
