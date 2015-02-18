@@ -11,7 +11,26 @@ $rssBloomington = "http://www.reddit.com/r/bloomington/new/.rss";
 $rssHeraldTimesOnline = "http://www.heraldtimesonline.com/search/?q=&t=article&l=100&d=&d1=&d2=&s=start_time&sd=desc&nsa=eedition&c[]=news/local,news/local/*&f=rss";
 $rssMagbloom = "http://www.magbloom.com/feed/";
 
-$DB = new DBPDO();
+$data = getData([$rssIndianaUniversity, $rssBloomington, $rssHeraldTimesOnline, $rssMagbloom]);
+insertLastData($data);
+
+function insertLastData($data)
+{
+    $pdo = new PDO('mysql:dbname=' . DATABASE_NAME . ';host=' . DATABASE_HOST, DATABASE_USER, DATABASE_PASS, array(PDO::ATTR_PERSISTENT => true));
+    $stmt = $pdo->prepare("INSERT INTO articles (link, title, description, pubDate) VALUES (:link, :title, :description, :pubDate)");
+
+    foreach($data as $item)
+    {
+        $date = date("Y-m-d H:i:s", strtotime($item->pubDate));
+
+        $stmt->bindParam(':link', $item->link);
+        $stmt->bindParam(':title', $item->title);
+        $stmt->bindParam(':description', $item->description);
+        $stmt->bindParam(':pubDate', $date);
+
+        $stmt->execute();
+    }
+}
 
 /**
  * Get data from rss feed, see example of using in index.php (line 24)

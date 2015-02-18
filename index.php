@@ -27,7 +27,6 @@
             <div class="panel panel-default bootcards-chart">
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                         <?php
-                        $data = getData([$rssIndianaUniversity, $rssBloomington, $rssHeraldTimesOnline, $rssMagbloom]);
                         $result = sortData($data);
                         foreach($result as $item){
                         ?>
@@ -41,7 +40,7 @@
                                     <?php echo '<p>' . $item->description . '</p>';?>
                                 </div>
 
-                                <div>
+                                <div class="btn-vote">
                                     <?php echo ThumbsUp::item($item->guid)->template('thumbs_up_down')->options('align=right');?>
                                 </div>
                             </div>
