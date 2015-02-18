@@ -47,6 +47,17 @@
                             </div>
                         </div>
                         <div class="panel-footer">
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                  <label for="hide">Hide</label>
+                                <input type="checkbox" name="hide" aria-label="...">&nbsp
+                                  <label for="readit">Read it</label>
+                                <input type="checkbox" name="readit" aria-label="...">&nbsp
+                                  <label for="favorite">Favorite</label>
+                                <input type="checkbox" name="favorite" aria-label="...">&nbsp
+                              </span>
+                            </div>
+
                             <small class="pull-right"><?php echo $item['pubDate'];?></small>
                         </div>
                     </div>
