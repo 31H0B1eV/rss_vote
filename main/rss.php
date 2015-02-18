@@ -27,7 +27,7 @@ function insertLastData($data)
             ':link' => $item->link,
             ':title' => $item->title,
             ':description' => $item->description,
-            ':pubDate' => $date
+            ':pubDate' => $date,
         ));
     }
 }
