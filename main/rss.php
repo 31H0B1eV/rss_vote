@@ -1,9 +1,17 @@
 <?php
+include_once('db/class.DBPDO.php');
+
+define('DATABASE_NAME', 'thumbsup');
+define('DATABASE_USER', 'homestead');
+define('DATABASE_PASS', 'secret');
+define('DATABASE_HOST', 'localhost');
 
 $rssIndianaUniversity = "http://www.reddit.com/r/IndianaUniversity/new/.rss";
 $rssBloomington = "http://www.reddit.com/r/bloomington/new/.rss";
 $rssHeraldTimesOnline = "http://www.heraldtimesonline.com/search/?q=&t=article&l=100&d=&d1=&d2=&s=start_time&sd=desc&nsa=eedition&c[]=news/local,news/local/*&f=rss";
 $rssMagbloom = "http://www.magbloom.com/feed/";
+
+$DB = new DBPDO();
 
 /**
  * Get data from rss feed, see example of using in index.php (line 24)
