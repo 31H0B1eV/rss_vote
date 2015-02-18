@@ -36,7 +36,7 @@ function selectData()
 {
     $DB = new DBPDO();
 
-    $data = $DB->fetchAll("SELECT link, title, description, pubDate FROM articles ORDER BY pubDate");
+    $data = $DB->fetchAll("SELECT id, link, title, description, pubDate FROM articles ORDER BY pubDate");
 
     return $data;
 }

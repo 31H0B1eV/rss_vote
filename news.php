@@ -50,11 +50,13 @@
                             <div class="input-group">
                               <span class="input-group-addon">
                                   <label for="hide">Hide</label>
-                                <input type="checkbox" name="hide" aria-label="...">&nbsp
+                                  <input class="hiden" type="checkbox" name="hide" value="<?php echo $item['id']?>"/>&nbsp
+
                                   <label for="readit">Read it</label>
-                                <input type="checkbox" name="readit" aria-label="...">&nbsp
+                                  <input class="readit" type="checkbox" name="readit" value="<?php echo $item['id']?>"/>&nbsp
+
                                   <label for="favorite">Favorite</label>
-                                <input type="checkbox" name="favorite" aria-label="...">&nbsp
+                                  <input class="favorite" type="checkbox" name="favorite" value="<?php echo $item['id']?>"/>&nbsp
                               </span>
                             </div>
 
@@ -72,6 +74,57 @@
     <!-- Bootstrap and Bootcards JS -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/js/bootcards.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.hiden').on('change', function() {
+                if(this.checked){
+                    $.ajax({
+                        url: '/main/register.php',
+                        type: 'POST',
+                        data: 'hide=true&value=' + this.value.valueOf(),
+                        success: function (response) {
+                            alert('done!');
+                        },
+                        error: function (e) {
+                            console.log(e.error().getAllResponseHeaders());
+                        }
+                    });
+                }
+            });
+
+            $('.readit').on('change', function() {
+                if(this.checked){
+                    $.ajax({
+                        url: '/main/register.php',
+                        type: 'POST',
+                        data: 'readit=true&value=' + this.value.valueOf(),
+                        success: function (response) {
+                            alert('done!');
+                        },
+                        error: function (e) {
+                            console.log(e.error().getAllResponseHeaders());
+                        }
+                    });
+                }
+            });
+
+            $('.favorite').on('change', function() {
+                if(this.checked){
+                    $.ajax({
+                        url: '/main/register.php',
+                        type: 'POST',
+                        data: 'favorite=true&value=' + this.value.valueOf(),
+                        success: function (response) {
+                            alert('done!');
+                        },
+                        error: function (e) {
+                            console.log(e.error().getAllResponseHeaders());
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 	</body>
 </html>
 
