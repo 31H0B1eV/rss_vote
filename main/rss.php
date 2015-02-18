@@ -23,12 +23,12 @@ function insertLastData($data)
     {
         $date = date("Y-m-d H:i:s", strtotime($item->pubDate));
 
-        $stmt->bindParam(':link', $item->link);
-        $stmt->bindParam(':title', $item->title);
-        $stmt->bindParam(':description', $item->description);
-        $stmt->bindParam(':pubDate', $date);
-
-        $stmt->execute();
+        $stmt->execute(array(
+            ':link' => $item->link,
+            ':title' => $item->title,
+            ':description' => $item->description,
+            ':pubDate' => $date
+        ));
     }
 }
 
@@ -36,7 +36,7 @@ function selectData()
 {
     $DB = new DBPDO();
 
-    $data = $DB->fetchAll("SELECT * FROM articles ORDER BY pubDate");
+    $data = $DB->fetchAll("SELECT link, title, description, pubDate FROM articles ORDER BY pubDate");
 
     return $data;
 }
